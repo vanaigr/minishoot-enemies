@@ -236,20 +236,20 @@ body {
     .map-button { display: none; }
     .menu-type { padding-bottom: 1px; }
 
-    .container:has(input[value="1"]:checked),
+    .container:has(input[value="2"]:checked),
     .container:has(input[value="0"]:checked) {
-        & label:has(> input[value="1"]) {
-            background: lightgray;
-        }
-        & .filter-menu { display: none; }
-        & .about-menu { display: none; }
-    }
-
-    .container:has(input[value="2"]:checked) {
         & label:has(> input[value="2"]) {
             background: lightgray;
         }
         & .object-menu { display: none; }
+        & .about-menu { display: none; }
+    }
+
+    .container:has(input[value="1"]:checked) {
+        & label:has(> input[value="1"]) {
+            background: lightgray;
+        }
+        & .filter-menu { display: none; }
         & .about-menu { display: none; }
     }
 
