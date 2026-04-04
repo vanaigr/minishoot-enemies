@@ -662,18 +662,20 @@ function updUrlScene(it) {
     }
 }
 
-const selector = document.querySelector('.preset-selector > select')
+const selectors = document.querySelectorAll('.preset-selector > select')
 try {
     function set(value) {
         const fp = context.filterPresets
         if(value in fp.cur && fp.selected !== value) {
             fp.selected = value
+            for(const sel of selectors) sel.value = value
             context.filtersUpdated()
         }
-
     }
-    selector.addEventListener('change', () => set(selector.value))
-    set(selector.value)
+    for(const sel of selectors) {
+        sel.addEventListener('change', () => set(sel.value))
+    }
+    set(selectors[0].value)
 }
 catch(err) {
     console.error(err)
